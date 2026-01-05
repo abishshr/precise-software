@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Calendar,
   Users,
@@ -13,6 +14,7 @@ import {
   ArrowRight,
   CheckCircle,
   Sparkles,
+  ExternalLink,
 } from 'lucide-react';
 
 const features = [
@@ -58,6 +60,39 @@ const features = [
   },
 ];
 
+const screenshots = [
+  {
+    title: 'Weekly Schedule',
+    description: 'View and manage all your classes in a beautiful weekly calendar',
+    image: '/screenshots/studiodesk-schedule.png',
+  },
+  {
+    title: 'Customer Management',
+    description: 'Keep track of all your customers and their details',
+    image: '/screenshots/studiodesk-customers.png',
+  },
+  {
+    title: 'QR Check-in',
+    description: 'Fast check-in with QR code scanning',
+    image: '/screenshots/studiodesk-checkin.png',
+  },
+  {
+    title: 'Financial Overview',
+    description: 'Track income, expenses, and profit at a glance',
+    image: '/screenshots/studiodesk-finance.png',
+  },
+  {
+    title: 'Membership Plans',
+    description: 'Create and manage membership packages',
+    image: '/screenshots/studiodesk-memberships.png',
+  },
+  {
+    title: 'Class Templates',
+    description: 'Configure your class types with duration and pricing',
+    image: '/screenshots/studiodesk-classes.png',
+  },
+];
+
 const useCases = [
   {
     title: 'Yoga Studios',
@@ -81,29 +116,6 @@ const useCases = [
   },
 ];
 
-const workflows = [
-  {
-    step: '1',
-    title: 'Configure Classes',
-    description: 'Set up your class types with duration, capacity, and pricing.',
-  },
-  {
-    step: '2',
-    title: 'Create Sessions',
-    description: 'Schedule sessions with instructors. Enable recurring for regular classes.',
-  },
-  {
-    step: '3',
-    title: 'Book Customers',
-    description: 'Customers are booked with automatic waitlist when full.',
-  },
-  {
-    step: '4',
-    title: 'Check-in',
-    description: 'Scan QR codes for instant check-in. Track attendance automatically.',
-  },
-];
-
 export default function StudioBook() {
   return (
     <div className="overflow-hidden">
@@ -124,7 +136,7 @@ export default function StudioBook() {
             <div>
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-6 border border-white/20">
                 <Sparkles className="w-4 h-4 text-yellow-300" />
-                <span>Coming Soon</span>
+                <span>Now Live - Try the Demo</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 StudioDesk
@@ -137,60 +149,65 @@ export default function StudioBook() {
                 Schedule classes, manage memberships, track finances, and check-in customers with QR codes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
+                <a
+                  href="https://studiodesk.org/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 hover:bg-purple-50 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg"
                 >
-                  Join Waitlist
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
+                  Try Demo
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                </a>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all border border-white/20 text-base sm:text-lg"
                 >
-                  Request Demo
+                  Contact Sales
                 </Link>
               </div>
             </div>
             <div className="relative mt-8 lg:mt-0">
-              <div className="glass rounded-2xl sm:rounded-3xl p-3 sm:p-6 glow-blue">
-                <div className="bg-gray-900 rounded-xl sm:rounded-2xl aspect-video flex items-center justify-center relative overflow-hidden">
-                  {/* Fake schedule UI mockup */}
-                  <div className="absolute inset-0 p-3 sm:p-4">
-                    <div className="flex gap-2 mb-3">
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500" />
-                    </div>
-                    {/* Calendar header */}
-                    <div className="flex gap-1 mb-2">
-                      {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
-                        <div key={day} className="flex-1 text-center text-gray-400 text-[8px] sm:text-xs">{day}</div>
-                      ))}
-                    </div>
-                    {/* Calendar grid */}
-                    <div className="grid grid-cols-7 gap-1 flex-1">
-                      {[...Array(14)].map((_, i) => (
-                        <div
-                          key={i}
-                          className={`rounded h-6 sm:h-10 ${
-                            i === 2 || i === 5 || i === 9 || i === 12
-                              ? 'bg-purple-500/40'
-                              : i === 3 || i === 8
-                              ? 'bg-pink-500/40'
-                              : 'bg-gray-800'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="text-center z-10">
-                    <Calendar className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 opacity-30" />
-                    <p className="text-gray-500 text-xs sm:text-sm">Studio Management</p>
-                  </div>
-                </div>
+              <div className="glass rounded-2xl sm:rounded-3xl p-2 sm:p-3 glow-blue">
+                <Image
+                  src="/screenshots/studiodesk-schedule.png"
+                  alt="StudioDesk Schedule View"
+                  width={800}
+                  height={500}
+                  className="rounded-xl sm:rounded-2xl shadow-2xl"
+                />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Screenshots Gallery */}
+      <section className="py-16 sm:py-24 bg-gray-50 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">See it in action</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              A complete studio management system with everything you need
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {screenshots.map((screenshot) => (
+              <div key={screenshot.title} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div className="aspect-video relative overflow-hidden">
+                  <Image
+                    src={screenshot.image}
+                    alt={screenshot.title}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-semibold text-gray-900 mb-1">{screenshot.title}</h3>
+                  <p className="text-gray-600 text-sm">{screenshot.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -219,40 +236,8 @@ export default function StudioBook() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16 sm:py-24 bg-gray-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-violet-100 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-base sm:text-lg text-gray-600">Simple workflow from setup to daily operations</p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6 sm:gap-8">
-            {workflows.map((item, index) => (
-              <div key={item.step} className="relative">
-                <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full flex items-center justify-center text-white font-bold mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-                {index < workflows.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 text-purple-300">
-                    <ArrowRight className="w-6 h-6" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Use Cases */}
-      <section className="py-16 sm:py-24 bg-white relative">
+      <section className="py-16 sm:py-24 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Perfect for</h2>
@@ -260,7 +245,7 @@ export default function StudioBook() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {useCases.map((useCase) => (
-              <div key={useCase.title} className="group bg-gray-50 hover:bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div key={useCase.title} className="group bg-white hover:bg-purple-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="text-4xl sm:text-5xl mb-4">{useCase.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
                 <p className="text-gray-600 text-sm sm:text-base">{useCase.description}</p>
@@ -271,7 +256,7 @@ export default function StudioBook() {
       </section>
 
       {/* Key Benefits */}
-      <section className="py-16 sm:py-24 bg-gray-50 relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -298,61 +283,53 @@ export default function StudioBook() {
               </ul>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-purple-100 to-violet-100 rounded-3xl p-8 sm:p-12">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white rounded-2xl p-4 shadow-lg">
-                    <div className="text-3xl font-bold text-purple-600">500+</div>
-                    <div className="text-gray-600 text-sm">Classes Managed</div>
-                  </div>
-                  <div className="bg-white rounded-2xl p-4 shadow-lg">
-                    <div className="text-3xl font-bold text-purple-600">2000+</div>
-                    <div className="text-gray-600 text-sm">Customers</div>
-                  </div>
-                  <div className="bg-white rounded-2xl p-4 shadow-lg">
-                    <div className="text-3xl font-bold text-purple-600">98%</div>
-                    <div className="text-gray-600 text-sm">Check-in Rate</div>
-                  </div>
-                  <div className="bg-white rounded-2xl p-4 shadow-lg">
-                    <div className="text-3xl font-bold text-purple-600">5hrs</div>
-                    <div className="text-gray-600 text-sm">Saved Weekly</div>
-                  </div>
-                </div>
+              <div className="glass rounded-2xl sm:rounded-3xl p-2 sm:p-3">
+                <Image
+                  src="/screenshots/studiodesk-customer-detail.png"
+                  alt="Customer Detail View"
+                  width={800}
+                  height={500}
+                  className="rounded-xl sm:rounded-2xl shadow-2xl"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Early Access Section */}
-      <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-100 to-violet-100 rounded-full blur-3xl opacity-50" />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-gradient-to-br from-purple-600 to-violet-700 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-white text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Get Early Access</h2>
-              <p className="text-purple-100 mb-6 sm:mb-8 max-w-xl mx-auto text-sm sm:text-base">
-                Be among the first to try StudioDesk. Early adopters get exclusive pricing and direct input on features.
-              </p>
-              <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-8">
-                {['Priority access', 'Founding member pricing', 'Feature requests'].map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-2 text-sm sm:text-base">
-                    <CheckCircle className="w-5 h-5 text-purple-300" />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 hover:bg-purple-50 px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg"
-              >
-                Join Waitlist
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+      {/* Demo Credentials */}
+      <section className="py-16 sm:py-24 bg-purple-50 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 shadow-xl text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Try the Demo</h2>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+              Experience StudioDesk with our fully-loaded demo account. Explore all features with sample data.
+            </p>
+            <div className="bg-gray-50 rounded-xl p-6 mb-8 max-w-md mx-auto text-left">
+              <div className="space-y-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-500">URL:</span>
+                  <a href="https://studiodesk.org/login" target="_blank" rel="noopener noreferrer" className="text-purple-600 font-medium hover:underline">studiodesk.org/login</a>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Email:</span>
+                  <span className="font-mono text-gray-900">demo@studiodesk.org</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Password:</span>
+                  <span className="font-mono text-gray-900">Demo2024!</span>
+                </div>
+              </div>
             </div>
+            <a
+              href="https://studiodesk.org/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-violet-600 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg hover:opacity-90"
+            >
+              Open Demo
+              <ExternalLink className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
@@ -369,17 +346,28 @@ export default function StudioBook() {
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-violet-400/20 rounded-full blur-3xl" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Be the first to know</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to streamline your studio?</h2>
           <p className="text-base sm:text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
-            StudioDesk is launching soon. Join the waitlist to get early access and special pricing.
+            Contact us today to get started with StudioDesk for your business.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 hover:bg-purple-50 px-8 sm:px-10 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg"
-          >
-            Join Waitlist
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://studiodesk.org/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 hover:bg-purple-50 px-8 sm:px-10 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg"
+            >
+              Try Demo Free
+              <ExternalLink className="w-5 h-5" />
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 sm:px-10 py-4 rounded-xl font-semibold transition-all border border-white/20 text-base sm:text-lg"
+            >
+              Contact Sales
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

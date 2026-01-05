@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ShoppingCart, Calendar, ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
+import { ShoppingCart, Calendar, ArrowRight, CheckCircle, Sparkles, ExternalLink } from 'lucide-react';
 
 const products = [
   {
@@ -10,6 +10,7 @@ const products = [
     color: 'from-emerald-500 to-green-600',
     bgColor: 'bg-emerald-500/10',
     href: '/warungos',
+    demoUrl: 'https://warungos-frontend.vercel.app',
     features: ['Kitchen Display System', 'Inventory Management', 'Multi-language Support', 'Real-time Reports'],
   },
   {
@@ -20,6 +21,7 @@ const products = [
     color: 'from-purple-500 to-violet-600',
     bgColor: 'bg-purple-500/10',
     href: '/studiobook',
+    demoUrl: null,
     features: ['Class Scheduling', 'QR Check-in', 'Membership Management', 'WhatsApp Integration'],
   },
 ];
@@ -28,66 +30,87 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center text-white overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-gray-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/85 to-gray-900/90" />
         {/* Floating Effects */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float-delayed" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-8 border border-white/10">
-              <Sparkles className="w-4 h-4 text-yellow-400" />
-              <span>Building the future of business software</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm mb-6 border border-white/20">
+                <Sparkles className="w-4 h-4 text-yellow-300" />
+                <span>Building the future of business software</span>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                precise-software
+              </h1>
+              <p className="text-xl sm:text-2xl text-gray-100 mb-4">
+                Software Solutions for Your Business
+              </p>
+              <p className="text-base sm:text-lg text-gray-300/80 mb-8 leading-relaxed">
+                We build modern, reliable software that helps businesses operate more efficiently.
+                From point of sale systems to studio management, we&apos;ve got you covered.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="#products"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg"
+                >
+                  View Products
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold transition-all border border-white/20 text-base sm:text-lg"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              Software Solutions for{' '}
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                Your Business
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              We build modern, reliable software that helps businesses operate more efficiently.
-              From point of sale to desk booking, we&apos;ve got you covered.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="#products"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 text-lg"
-              >
-                View Products
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all border border-white/20 backdrop-blur-sm text-lg"
-              >
-                Contact Us
-              </Link>
+            {/* Hero Image */}
+            <div className="relative mt-8 lg:mt-0">
+              <div className="glass rounded-2xl sm:rounded-3xl p-3 sm:p-6 glow-emerald">
+                <div className="bg-gray-900 rounded-xl sm:rounded-2xl aspect-video flex items-center justify-center relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                    alt="Business software dashboard"
+                    className="absolute inset-0 w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                  <div className="relative text-center p-4">
+                    <div className="flex justify-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-emerald-500/30 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                        <ShoppingCart className="w-6 h-6" />
+                      </div>
+                      <div className="w-12 h-12 bg-purple-500/30 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                        <Calendar className="w-6 h-6" />
+                      </div>
+                    </div>
+                    <p className="text-gray-300 text-sm sm:text-base">Modern Business Solutions</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 sm:py-28 bg-gray-50 relative">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-
+      <section id="products" className="py-16 sm:py-24 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Products</h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Products</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               Purpose-built software solutions designed to solve real business problems.
             </p>
           </div>
@@ -123,13 +146,26 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={product.href}
-                    className={`inline-flex items-center gap-2 font-semibold bg-gradient-to-r ${product.color} bg-clip-text text-transparent group-hover:gap-3 transition-all`}
-                  >
-                    Learn more
-                    <ArrowRight className="w-4 h-4 text-emerald-500" />
-                  </Link>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      href={product.href}
+                      className={`inline-flex items-center justify-center gap-2 font-semibold bg-gradient-to-r ${product.color} text-white px-5 py-2.5 rounded-lg transition-all hover:opacity-90`}
+                    >
+                      Learn more
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    {product.demoUrl && (
+                      <a
+                        href={product.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 font-semibold text-gray-600 hover:text-gray-900 px-5 py-2.5 rounded-lg border border-gray-200 hover:border-gray-300 transition-all"
+                      >
+                        Try Demo
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -138,22 +174,24 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-emerald-100 to-teal-100 rounded-full blur-3xl opacity-50" />
-        </div>
+      <section className="relative py-16 sm:py-24 text-white overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2000&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/90 to-gray-900/90" />
+        <div className="absolute top-10 right-10 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to get started?
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to get started?</h2>
+          <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Contact us today to learn more about our products and how they can help your business.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-8 sm:px-10 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-lg"
+            className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 hover:bg-gray-100 px-8 sm:px-10 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl text-base sm:text-lg"
           >
             Get in Touch
             <ArrowRight className="w-5 h-5" />
