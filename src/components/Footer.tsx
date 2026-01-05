@@ -77,10 +77,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@precise-software.com"
+                  href="mailto:info@precise-software.com"
                   className="text-slate-300 hover:text-white transition-colors"
                 >
-                  hello@precise-software.com
+                  info@precise-software.com
                 </a>
               </li>
             </ul>

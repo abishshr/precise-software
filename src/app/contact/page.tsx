@@ -142,11 +142,11 @@ export default function Contact() {
               <p className="text-center text-slate-500 mb-6">{t.contact.alternative}</p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <a
-                  href="mailto:hello@precise-software.com"
+                  href="mailto:info@precise-software.com"
                   className="flex items-center justify-center gap-2 text-slate-600 hover:text-blue-600 transition-colors"
                 >
                   <Mail size={18} />
-                  hello@precise-software.com
+                  info@precise-software.com
                 </a>
                 <a
                   href="https://wa.me/628123105878"
