@@ -1,35 +1,39 @@
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '@/lib/i18n';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-slate-900 text-white">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        {/* Main Footer */}
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PS</span>
-              </div>
-              <span className="font-bold text-xl">precise-software</span>
-            </div>
-            <p className="text-gray-400 max-w-md">
-              Building modern software solutions to help businesses thrive.
-              From point of sale to studio management, we&apos;ve got you covered.
+          <div className="lg:col-span-1">
+            <Link href="/" className="inline-block font-bold text-2xl mb-4">
+              precise<span className="text-slate-500">-software</span>
+            </Link>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              {t.footer.tagline}
             </p>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold mb-4">Products</h3>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-5">
+              {t.footer.products}
+            </h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/warungos" className="text-gray-400 hover:text-white">
+                <Link href="/warungos" className="text-slate-300 hover:text-white transition-colors">
                   WarungOS
                 </Link>
               </li>
               <li>
-                <Link href="/studiobook" className="text-gray-400 hover:text-white">
+                <Link href="/studiobook" className="text-slate-300 hover:text-white transition-colors">
                   StudioDesk
                 </Link>
               </li>
@@ -38,34 +42,56 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-5">
+              {t.footer.company}
+            </h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">
-                  About Us
+                <Link href="/about" className="text-slate-300 hover:text-white transition-colors">
+                  {t.footer.aboutUs}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white">
-                  Contact
+                <Link href="/contact" className="text-slate-300 hover:text-white transition-colors">
+                  {t.footer.contactLink}
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-slate-400 mb-5">
+              {t.footer.contactTitle}
+            </h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-white">
-                  Privacy Policy
-                </Link>
+                <a
+                  href="https://wa.me/628123105878"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  +62 812-3105-8788
+                </a>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-400 hover:text-white">
-                  Terms of Service
-                </Link>
+                <a
+                  href="mailto:hello@precise-software.com"
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  hello@precise-software.com
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} precise-software. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="py-6 border-t border-slate-800">
+          <p className="text-slate-500 text-sm text-center">
+            &copy; {new Date().getFullYear()} precise-software. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
