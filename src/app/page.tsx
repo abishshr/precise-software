@@ -2,10 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, Shield, Zap, Headphones, ChevronRight, Play, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n';
-import { useRef } from 'react';
 
 // Animation variants
 const fadeInUp: Variants = {
@@ -24,47 +23,19 @@ const scaleIn: Variants = {
 
 export default function Home() {
   const { t } = useLanguage();
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-[calc(100svh-64px)] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+      <section className="relative min-h-[calc(100svh-64px)] flex items-center justify-center">
+        {/* Background */}
         <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
-            alt="Modern office"
-            fill
-            className="object-cover opacity-[0.07]"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-blue-50/90" />
-
-          {/* Floating Elements */}
-          <motion.div
-            className="absolute top-20 right-[10%] w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-            animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute bottom-20 left-[5%] w-96 h-96 bg-gradient-to-tr from-emerald-400/15 to-cyan-400/15 rounded-full blur-3xl"
-            animate={{ y: [0, 20, 0], x: [0, -10, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
+          <div className="absolute top-20 right-[10%] w-72 h-72 bg-blue-100/50 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-[5%] w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl" />
         </div>
 
-        <motion.div
-          style={{ y: heroY, opacity: heroOpacity }}
-          className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-20"
-        >
+        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-20">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -144,23 +115,7 @@ export default function Home() {
               ))}
             </motion.div>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-5 h-8 rounded-full border-2 border-slate-300 flex items-start justify-center p-1.5"
-          >
-            <motion.div className="w-1 h-1.5 bg-slate-400 rounded-full" />
-          </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Products Section */}
