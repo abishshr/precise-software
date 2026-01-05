@@ -13,14 +13,14 @@ const products = [
     features: ['Kitchen Display System', 'Inventory Management', 'Multi-language Support', 'Real-time Reports'],
   },
   {
-    name: 'StudioBook',
-    tagline: 'Studio Desk Booking Made Simple',
-    description: 'Effortless desk and room booking for studios, co-working spaces, and creative offices.',
+    name: 'StudioDesk',
+    tagline: 'Studio Management Made Simple',
+    description: 'Complete management system for fitness studios, yoga centers, and dance academies with QR check-in.',
     icon: Calendar,
-    color: 'from-blue-500 to-indigo-600',
-    bgColor: 'bg-blue-500/10',
+    color: 'from-purple-500 to-violet-600',
+    bgColor: 'bg-purple-500/10',
     href: '/studiobook',
-    features: ['Easy Desk Booking', 'Room Scheduling', 'Team Management', 'Usage Analytics'],
+    features: ['Class Scheduling', 'QR Check-in', 'Membership Management', 'WhatsApp Integration'],
   },
 ];
 
@@ -28,12 +28,16 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-grid-pattern" />
+      <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-gray-900/90" />
+        {/* Floating Effects */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-float-delayed" />
-        <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
           <div className="text-center max-w-4xl mx-auto">

@@ -15,7 +15,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400 max-w-md">
               Building modern software solutions to help businesses thrive.
-              From point of sale to desk booking, we&apos;ve got you covered.
+              From point of sale to studio management, we&apos;ve got you covered.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/studiobook" className="text-gray-400 hover:text-white">
-                  StudioBook
+                  StudioDesk
                 </Link>
               </li>
             </ul>

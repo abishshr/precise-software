@@ -89,12 +89,16 @@ export default function WarungOS() {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 text-white overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-grid-pattern" />
+      <section className="relative min-h-[80vh] flex items-center text-white overflow-hidden">
+        {/* Background Image - Restaurant/Cafe setting */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-emerald-800/85 to-teal-900/90" />
+        {/* Floating Effects */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-float-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-400/10 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -250,8 +254,13 @@ export default function WarungOS() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern" />
+      <section className="relative py-16 sm:py-24 text-white overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=2000&q=80')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-green-900/90 to-teal-900/90" />
         <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-teal-400/20 rounded-full blur-3xl" />
 

@@ -31,7 +31,7 @@ export default function Header() {
               href="/studiobook"
               className="text-gray-600 hover:text-gray-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              StudioBook
+              StudioDesk
             </Link>
             <Link
               href="/about"
@@ -76,7 +76,7 @@ export default function Header() {
               className="block text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium py-3 px-4 rounded-xl transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              StudioBook
+              StudioDesk
             </Link>
             <Link
               href="/about"
