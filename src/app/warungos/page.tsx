@@ -137,7 +137,7 @@ export default function WarungOS() {
                 <span className="text-slate-500"> / {lang === 'id' ? 'bulan' : 'month'}</span>
               </div>
               <p className="text-sm text-slate-500 mb-6">
-                Rp 490.000 / {lang === 'id' ? 'tahun' : 'year'} ({lang === 'id' ? 'hemat 2 bulan' : 'save 2 months'})
+                Rp 490.000 / {lang === 'id' ? 'tahun' : 'year'} ({lang === 'id' ? '2 bulan GRATIS' : '2 months FREE'})
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2 text-sm text-slate-600">
@@ -194,7 +194,7 @@ export default function WarungOS() {
                 <span className="text-slate-500"> / {lang === 'id' ? 'bulan' : 'month'}</span>
               </div>
               <p className="text-sm text-slate-500 mb-6">
-                Rp 990.000 / {lang === 'id' ? 'tahun' : 'year'} ({lang === 'id' ? 'hemat 2 bulan' : 'save 2 months'})
+                Rp 990.000 / {lang === 'id' ? 'tahun' : 'year'} ({lang === 'id' ? '2 bulan GRATIS' : '2 months FREE'})
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2 text-sm text-slate-600">
@@ -245,7 +245,7 @@ export default function WarungOS() {
                 <span className="text-slate-500"> / {lang === 'id' ? 'bulan' : 'month'}</span>
               </div>
               <p className="text-sm text-slate-500 mb-6">
-                Rp 1.490.000 / {lang === 'id' ? 'tahun' : 'year'} ({lang === 'id' ? 'hemat 2 bulan' : 'save 2 months'})
+                Rp 1.490.000 / {lang === 'id' ? 'tahun' : 'year'} ({lang === 'id' ? '2 bulan GRATIS' : '2 months FREE'})
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2 text-sm text-slate-600">
