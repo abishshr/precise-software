@@ -280,17 +280,6 @@ export default function WarungOS() {
             </div>
           </div>
 
-          {/* Add-ons */}
-          <div className="mt-12 max-w-2xl mx-auto text-center">
-            <p className="text-sm text-slate-500 mb-4">
-              {lang === 'id' ? 'Tambahan opsional:' : 'Optional add-ons:'}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-600">
-              <span className="px-3 py-1 bg-slate-100 rounded-full">Extra outlet: Rp 25.000</span>
-              <span className="px-3 py-1 bg-slate-100 rounded-full">Extra user: Rp 10.000</span>
-              <span className="px-3 py-1 bg-slate-100 rounded-full">WhatsApp {lang === 'id' ? 'laporan otomatis' : 'auto reports'}: Rp 20.000</span>
-            </div>
-          </div>
         </div>
       </section>
 
