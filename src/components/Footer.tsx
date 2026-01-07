@@ -67,12 +67,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://wa.me/628123105878"
+                  href="https://wa.me/6281938404308"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-300 hover:text-white transition-colors"
                 >
-                  +62 812-3105-8788
+                  +62 819-3840-4308
                 </a>
               </li>
               <li>

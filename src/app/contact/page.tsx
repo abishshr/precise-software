@@ -149,13 +149,13 @@ export default function Contact() {
                   info@precise-software.com
                 </a>
                 <a
-                  href="https://wa.me/628123105878"
+                  href="https://wa.me/6281938404308"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 text-slate-600 hover:text-green-600 transition-colors"
                 >
                   <MessageSquare size={18} />
-                  +62 812-3105-8788
+                  +62 819-3840-4308
                 </a>
               </div>
             </div>

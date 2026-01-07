@@ -88,7 +88,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="https://wa.me/628123105878"
+                href="https://wa.me/6281938404308"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-full sm:w-auto px-7 py-3.5 bg-white text-slate-700 font-medium rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
@@ -446,7 +446,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="https://wa.me/628123105878"
+                href="https://wa.me/6281938404308"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-full sm:w-auto px-7 py-3.5 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-green-500/25 hover:shadow-xl hover:-translate-y-0.5"

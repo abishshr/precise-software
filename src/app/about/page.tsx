@@ -130,7 +130,7 @@ export default function About() {
                 <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/628123105878"
+                href="https://wa.me/6281938404308"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition-colors"
